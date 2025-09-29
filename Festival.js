@@ -6,26 +6,25 @@ const mechas = [
 ];
 console.log(mechas)
 //1 copiar el array y añadir dos nuevos
-const nuevosMechas = [
+const nuevosMechas = [ ...mechas,
     { nombre:'Desctructor', categoria: 'Retro', poder: 220, piloto:'tamisha'  }, 
     { nombre:'Dragon', categoria: 'Cyber', poder: 125, piloto:'thalia'  }
 ];
-const mechasCopia = [...mechas, ...nuevosMechas]
-console.log(mechasCopia);
+console.log(nuevosMechas);
 //2 Destructing
-const{nombre: primeroNombre, categoria: primeraCategoria} = mechas[0]
+const{nombre: primeroNombre, categoria: primeraCategoria} = nuevosMechas[0]
 console.log(`El primer mecha es ${primeroNombre} y su categoria es ${primeraCategoria}`)
 //3 Filtrar por categoria
 const filtrarPorCategoria =(array, categoria) =>
     array.filter(mecha =>mecha.categoria === categoria);
-console.log("Filtrados por cyber:", filtrarPorCategoria(mechasCopia, "Retro"))
+console.log("Filtrados por cyber:", filtrarPorCateaaagoria(mechasCopia, "Retro"))
 //4 Arrow function aumentar poder
 const aumentarPoder = mecha => ({
     ...mecha,
     poder: Math.round(mecha.poder*1.15)
 })
 
-//5 crear arry de potenciados
+//5 crear arry de potenciados  
 const mechasPotenciados = mechasCopia.map(aumentarPoder)
 console.log(mechasPotenciados)
 //6 rest destructuring 
